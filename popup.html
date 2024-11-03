@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Speech Logger</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      width: 300px;
+      height: 400px;
+      padding: 15px;
+      background-color: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    h2 {
+      margin-top: 0;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .material-icons {
+      font-size: 24px;
+    }
+    button {
+      padding: 12px 20px;
+      margin: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+    #status {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      font-weight: bold;
+    }
+    #logs {
+      flex-grow: 1;
+      margin-top: 10px;
+      overflow-y: auto;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+    }
+    .log-entry {
+      margin: 5px 0;
+      padding: 8px;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .debug-info {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #666;
+      max-height: 100px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2><i class="material-icons">mic</i> Speech Logger</h2>
+    <button id="startBtn"><i class="material-icons">play_arrow</i> Start Listening</button>
+    <button id="stopBtn" disabled><i class="material-icons">stop</i> Stop Listening</button>
+    <div id="status">Not listening</div>
+    <div id="logs"></div>
+    <div id="debug-info" class="debug-info"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

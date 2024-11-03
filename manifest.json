@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Speech Logger",
+    "version": "1.0",
+    "description": "Logs speech with timestamps",
+    "permissions": [
+      "storage",
+      "tabs",
+      "microphone"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "web_accessible_resources": [{
+      "resources": [
+        "welcome.html",
+        "welcome.js",
+        "permission.html",
+        "requestPermission.js"
+      ],
+      "matches": ["<all_urls>"]
+    }]
+  }
